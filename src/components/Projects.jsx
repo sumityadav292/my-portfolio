@@ -6,7 +6,7 @@ const projects = [
     id: 1,
     title: "Personal Portfolio",
     desc: "React + Tailwind based responsive portfolio website.",
-    link: "http://localhost:5173/",
+    link: "https://sumityadavportfolio1.netlify.app/",
   },
   {
     id: 2,
