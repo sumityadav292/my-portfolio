@@ -19,7 +19,7 @@ const About = () => {
         <p className="text-lg text-gray-300 leading-relaxed tracking-wide">
           Hello! I'm{" "}
           <span className="text-white font-semibold">Sumit Yadav</span>, a
-          4rd-year B.Tech CSE student from RR Group of Institutions, Lucknow.
+          4th-year B.Tech CSE student from RR Group of Institutions, Lucknow.
           <br />
           <br />
           I love crafting engaging web apps and solving real-world challenges
