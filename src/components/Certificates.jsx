@@ -6,7 +6,7 @@ import deloitte from "../assets/Deloitte.png";
 import edureka from "../assets/edureka.png";
 import simplilearn from "../assets/simplelearn.png";
 import udemy from "../assets/Udemy.png";
-
+import Claude from "../assets/Claude.png";
 const certificates = [
   {
     id: 1,
@@ -43,6 +43,13 @@ const certificates = [
     link: "https://drive.google.com/file/d/1HtE13PDuPJWka4eDWsF_jb9Yh-CSRlh2/view?usp=drive_link",
     img: simplilearn,
   },
+  {
+    id: 6,
+    title: "Certificate 6",
+    issuer: "Google Drive",
+    link: "https://drive.google.com/file/d/1vrAc7sQc-A-KzGfOY0tqfVOM_V5vd8gi/view?usp=drivesdk",
+    img: Claude,
+  }
 ];
 
 const Certificates = () => {

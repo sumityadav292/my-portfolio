@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../assets/sumitpicnew.png.jpg";
+import profile from "../assets/Sumit.png";
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -14,7 +14,7 @@ const Hero = () => {
         className="md:w-1/2 text-center md:text-left"
       >
         <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-indigo-400 drop-shadow-sm">
-          Hi, I'm <span className="text-white">Sumit Yadav</span>
+          Hi, I am <span className="text-white">Sumit Yadav</span>
         </h1>
         <p className="text-lg md:text-xl text-gray-300 mb-8">
           A passionate Full Stack Developer, bringing ideas to life through clean, efficient, and modern code.

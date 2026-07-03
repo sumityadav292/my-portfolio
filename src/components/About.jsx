@@ -17,15 +17,15 @@ const About = () => {
         </h2>
 
         <p className="text-lg text-gray-300 leading-relaxed tracking-wide">
-          Hello! I'm{" "}
+          Hello! I am{" "}
           <span className="text-white font-semibold">Sumit Yadav</span>, a
-          4th-year B.Tech CSE student from RR Group of Institutions, Lucknow.
+          B.Tech graduate in Computer Science & Engineering from RR Group of Institutions (AKTU), Lucknow.
           <br />
           <br />
           I love crafting engaging web apps and solving real-world challenges
-          with code. I'm passionate about{" "}
+          with code. I am passionate about{" "}
           <span className="text-indigo-300 font-medium">
-            full stack development
+            Full stack development
           </span>{" "}
           and constantly expanding my skillset.
           <br />
