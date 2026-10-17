@@ -1,67 +1,174 @@
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaBars,
+  FaTimes,
+  FaCode,
+  FaArrowUp
+} from "react-icons/fa";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
 
   const links = [
-    { id: 1, link: "home" },
-    { id: 2, link: "about" },
-    { id: 3, link: "projects" },
-     { id: 4, link: "certificates" },
-    { id: 5, link: "contact" },
+    { id: 1, name: "Home", link: "home" },
+    { id: 2, name: "About", link: "about" },
+    { id: 3, name: "Projects", link: "projects" },
+    { id: 4, name: "Certificates", link: "certificates" },
+    { id: 5, name: "Contact", link: "contact" },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = nav ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [nav]);
+
+  const closeMenu = (link) => {
+    setActiveLink(link);
+    setNav(false);
+  };
+
   return (
-    <div className="fixed w-full h-16 px-6 backdrop-blur-lg bg-black/30 text-white flex justify-between items-center z-50 shadow-md border-b border-white/10">
-      <h1 className="text-2xl font-extrabold text-indigo-400 tracking-wide">
-        Sumit-Yadav
-      </h1>
+    <header className="premium-navbar">
+      <nav
+        className={`navbar-shell ${
+          scrolled ? "navbar-scrolled" : ""
+        }`}
+      >
+        {/* Logo */}
+        <Link
+          to="home"
+          smooth
+          duration={600}
+          className="navbar-brand"
+          onClick={() => closeMenu("home")}
+        >
+          <span className="brand-icon">
+            <FaCode />
+          </span>
 
-      {/* Desktop Menu */}
-      <ul className="hidden md:flex space-x-8">
-        {links.map(({ id, link }) => (
-          <li
-            key={id}
-            className="capitalize text-sm font-medium cursor-pointer group transition-all duration-300"
-          >
-            <Link to={link} smooth duration={500}>
-              <span className="relative group-hover:text-indigo-400">
-                {link}
-                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-indigo-400 transition-all duration-300 group-hover:w-full"></span>
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+          <span className="brand-name">
+            SUMIT-YADAV<span className="brand-accent">🩷</span>
+            
+          </span>
+        </Link>
 
-      {/* Hamburger */}
-      <div className="md:hidden z-50 cursor-pointer" onClick={() => setNav(!nav)}>
-        {nav ? <FaTimes size={24} /> : <FaBars size={24} />}
-      </div>
-
-      {/* Mobile Menu */}
-      {nav && (
-        <ul className="absolute top-16 left-0 w-full bg-black/90 text-center py-8 flex flex-col space-y-6 md:hidden">
-          {links.map(({ id, link }) => (
-            <li
-              key={id}
-              className="capitalize text-lg font-medium hover:text-indigo-400 transition-all duration-300"
-            >
+        {/* Desktop Navigation */}
+        <ul className="navbar-links">
+          {links.map(({ id, name, link }) => (
+            <li key={id} className="navbar-item">
               <Link
                 to={link}
                 smooth
-                duration={500}
-                onClick={() => setNav(false)}
+                duration={600}
+                offset={-75}
+                spy
+                onSetActive={() => setActiveLink(link)}
+                onClick={() => closeMenu(link)}
+                className={`navbar-link ${
+                  activeLink === link ? "active-link" : ""
+                }`}
               >
-                {link}
+                {name}
+                <span className="nav-link-glow" />
               </Link>
             </li>
           ))}
         </ul>
-      )}
-    </div>
+
+        {/* Contact CTA */}
+        <Link
+          to="contact"
+          smooth
+          duration={600}
+          offset={-75}
+          onClick={() => closeMenu("contact")}
+          className="navbar-cta"
+        >
+          Let's Talk
+          <FaArrowUp className="cta-arrow" />
+        </Link>
+
+        {/* Mobile Menu Button */}
+        <button
+          type="button"
+          className="mobile-menu-button"
+          aria-label={nav ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={nav}
+          aria-controls="mobile-navigation"
+          onClick={() => setNav((previous) => !previous)}
+        >
+          {nav ? <FaTimes /> : <FaBars />}
+        </button>
+      </nav>
+
+      {/* Mobile Navigation */}
+      <div
+        className={`mobile-menu-overlay ${
+          nav ? "mobile-menu-open" : ""
+        }`}
+        onClick={() => setNav(false)}
+        aria-hidden={!nav}
+      >
+        <ul
+          id="mobile-navigation"
+          className="mobile-menu-panel"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <li className="mobile-menu-heading">
+            <span>EXPLORE</span>
+            <span className="mobile-menu-dot" />
+          </li>
+
+          {links.map(({ id, name, link }) => (
+            <li key={id}>
+              <Link
+                to={link}
+                smooth
+                duration={600}
+                offset={-75}
+                onClick={() => closeMenu(link)}
+                className={`mobile-nav-link ${
+                  activeLink === link ? "active-link" : ""
+                }`}
+              >
+                <span className="mobile-nav-number">
+                  0{id}
+                </span>
+                {name}
+                <span className="mobile-nav-arrow">↗</span>
+              </Link>
+            </li>
+          ))}
+
+          <li className="mobile-menu-footer">
+            <span>LET'S BUILD SOMETHING GREAT.</span>
+          </li>
+        </ul>
+      </div>
+    </header>
   );
 };
 
