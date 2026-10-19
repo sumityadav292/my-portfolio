@@ -6,6 +6,7 @@ import {
   FaGamepad ,
   FaCloudSun,
   FaUsers,
+  FaListCheck ,
   FaLaptopCode,
   FaFilm,
   FaTachometerAlt,
@@ -81,10 +82,22 @@ const projects = [
     desc: "A classic Tic-Tac-Toe game with a modern interface, allowing players to enjoy the timeless game in a digital format.",
     link: "https://tictacsy.netlify.app/",
     tech: ["HTML", "CSS", "JavaScript"],
-    icon: <FaGamepad />,
+    icon: <FaListCheck />,
     color: "pink",
     github: "",
 
+  },
+  {
+    id: 7,
+    number: "07",
+    title: "Todo List App",
+    category: "WEB APPLICATION",
+    desc: "A simple and intuitive Todo List application that allows users to manage their tasks efficiently with a clean interface.",
+    link: "https://todospark-sy.vercel.app/",
+    tech: ["React.js", "CSS", "Local Storage"],
+    icon: <FaLaptopCode />,
+    color: "purple",
+    github: "",
   }
 ];
 
