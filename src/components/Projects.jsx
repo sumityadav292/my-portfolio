@@ -3,6 +3,7 @@ import {
   FaExternalLinkAlt,
   FaGithub,
   FaReact,
+  FaGamepad ,
   FaCloudSun,
   FaUsers,
   FaLaptopCode,
@@ -72,6 +73,19 @@ const projects = [
     color: "cyan",
     github: "",
   },
+  {
+    id: 6,
+    number: "06",
+    title: "Tic-Tac-Toe Game",
+    category: "WEB GAME",
+    desc: "A classic Tic-Tac-Toe game with a modern interface, allowing players to enjoy the timeless game in a digital format.",
+    link: "https://tictacsy.netlify.app/",
+    tech: ["HTML", "CSS", "JavaScript"],
+    icon: <FaGamepad />,
+    color: "pink",
+    github: "",
+
+  }
 ];
 
 const Projects = () => {
