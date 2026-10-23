@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sumityadavportfolio1-one.vercel.app/sitemap.xml
+Sitemap: https://sumityadav-portfolio-sigma.vercel.app/sitemap.xml
