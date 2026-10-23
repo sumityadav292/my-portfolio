@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://sumityadavportfolio1-one.vercel.app/sitemap.xml

@@ -6,9 +6,10 @@ import {
   FaGamepad ,
   FaCloudSun,
   FaUsers,
-  FaListCheck ,
+  FaCheckCircle, 
   FaLaptopCode,
   FaFilm,
+
   FaTachometerAlt,
 } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
@@ -82,7 +83,7 @@ const projects = [
     desc: "A classic Tic-Tac-Toe game with a modern interface, allowing players to enjoy the timeless game in a digital format.",
     link: "https://tictacsy.netlify.app/",
     tech: ["HTML", "CSS", "JavaScript"],
-    icon: <FaListCheck />,
+    icon: <FaCheckCircle />,
     color: "pink",
     github: "",
 
