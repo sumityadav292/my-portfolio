@@ -15,6 +15,7 @@ import simplilearn from "../assets/simplelearn.png";
 import udemy from "../assets/Udemy.png";
 import Claude from "../assets/Claude.png";
 import trainx from "../assets/TrainX.png";
+import nettech from "../assets/Sumit nettech.png";
 
 const certificates = [
   {
@@ -52,13 +53,16 @@ const certificates = [
     number: "04",
   },
   {
-    id: 5,
-    title: "Skills Certification",
-    issuer: "Simplilearn",
-    link: "https://drive.google.com/file/d/1HtE13PDuPJWka4eDWsF_jb9Yh-CSRlh2/view?usp=drive_link",
-    img: simplilearn,
-    number: "05",
-  },
+    
+  id: 5,
+  title: "Web Development Internship",
+  issuer: "NetTech India",
+  link: "https://drive.google.com/file/d/1lGqFqT8m26Kp1nfkMJFgTfYi_grqMFpY/view?usp=sharing",
+  img: nettech,
+  number: "05",
+},
+
+  
   {
     id: 6,
     title: "AI Learning Certification",
